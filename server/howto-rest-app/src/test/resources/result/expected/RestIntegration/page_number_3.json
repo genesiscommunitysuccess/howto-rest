@@ -1,0 +1,181 @@
+[ {
+  "ACCOUNT_NUMBER" : "61",
+  "BALANCE" : "1219.71",
+  "BROKER_ID" : "8",
+  "CUSTOMER_ID" : "4",
+  "OWNER" : "Owner 1"
+}, {
+  "ACCOUNT_NUMBER" : "62",
+  "BALANCE" : "5139.42",
+  "BROKER_ID" : "4",
+  "CUSTOMER_ID" : "7",
+  "OWNER" : "Owner 2"
+}, {
+  "ACCOUNT_NUMBER" : "63",
+  "BALANCE" : "640",
+  "BROKER_ID" : "9",
+  "CUSTOMER_ID" : "16",
+  "OWNER" : "Owner 3"
+}, {
+  "ACCOUNT_NUMBER" : "64",
+  "BALANCE" : "7388.8",
+  "BROKER_ID" : "4",
+  "CUSTOMER_ID" : "8",
+  "OWNER" : "Owner 4"
+}, {
+  "ACCOUNT_NUMBER" : "65",
+  "BALANCE" : "621.1",
+  "BROKER_ID" : "10",
+  "CUSTOMER_ID" : "17",
+  "OWNER" : "Owner 5"
+}, {
+  "ACCOUNT_NUMBER" : "66",
+  "BALANCE" : "3244.46",
+  "BROKER_ID" : "3",
+  "CUSTOMER_ID" : "15",
+  "OWNER" : "Owner 6"
+}, {
+  "ACCOUNT_NUMBER" : "67",
+  "BALANCE" : "9474.18",
+  "BROKER_ID" : "3",
+  "CUSTOMER_ID" : "13",
+  "OWNER" : "Owner 7"
+}, {
+  "ACCOUNT_NUMBER" : "68",
+  "BALANCE" : "3279.51",
+  "BROKER_ID" : "3",
+  "CUSTOMER_ID" : "13",
+  "OWNER" : "Owner 8"
+}, {
+  "ACCOUNT_NUMBER" : "69",
+  "BALANCE" : "1088.47",
+  "BROKER_ID" : "3",
+  "CUSTOMER_ID" : "12",
+  "OWNER" : "Owner 9"
+}, {
+  "ACCOUNT_NUMBER" : "70",
+  "BALANCE" : "3350.21",
+  "BROKER_ID" : "12",
+  "CUSTOMER_ID" : "14",
+  "OWNER" : "Owner 10"
+}, {
+  "ACCOUNT_NUMBER" : "71",
+  "BALANCE" : "7649.58",
+  "BROKER_ID" : "11",
+  "CUSTOMER_ID" : "5",
+  "OWNER" : "Owner 11"
+}, {
+  "ACCOUNT_NUMBER" : "72",
+  "BALANCE" : "9950.38",
+  "BROKER_ID" : "7",
+  "CUSTOMER_ID" : "17",
+  "OWNER" : "Owner 12"
+}, {
+  "ACCOUNT_NUMBER" : "73",
+  "BALANCE" : "9882.78",
+  "BROKER_ID" : "14",
+  "CUSTOMER_ID" : "17",
+  "OWNER" : "Owner 13"
+}, {
+  "ACCOUNT_NUMBER" : "74",
+  "BALANCE" : "7930.14",
+  "BROKER_ID" : "10",
+  "CUSTOMER_ID" : "4",
+  "OWNER" : "Owner 14"
+}, {
+  "ACCOUNT_NUMBER" : "75",
+  "BALANCE" : "1620.32",
+  "BROKER_ID" : "17",
+  "CUSTOMER_ID" : "19",
+  "OWNER" : "Owner 15"
+}, {
+  "ACCOUNT_NUMBER" : "76",
+  "BALANCE" : "1512.96",
+  "BROKER_ID" : "17",
+  "CUSTOMER_ID" : "2",
+  "OWNER" : "Owner 16"
+}, {
+  "ACCOUNT_NUMBER" : "77",
+  "BALANCE" : "8422.33",
+  "BROKER_ID" : "12",
+  "CUSTOMER_ID" : "18",
+  "OWNER" : "Owner 17"
+}, {
+  "ACCOUNT_NUMBER" : "78",
+  "BALANCE" : "3720.52",
+  "BROKER_ID" : "1",
+  "CUSTOMER_ID" : "6",
+  "OWNER" : "Owner 18"
+}, {
+  "ACCOUNT_NUMBER" : "79",
+  "BALANCE" : "8323.52",
+  "BROKER_ID" : "14",
+  "CUSTOMER_ID" : "2",
+  "OWNER" : "Owner 19"
+}, {
+  "ACCOUNT_NUMBER" : "80",
+  "BALANCE" : "3372.4",
+  "BROKER_ID" : "1",
+  "CUSTOMER_ID" : "2",
+  "OWNER" : "Owner 20"
+}, {
+  "ACCOUNT_NUMBER" : "81",
+  "BALANCE" : "5413.47",
+  "BROKER_ID" : "14",
+  "CUSTOMER_ID" : "2",
+  "OWNER" : "Owner 1"
+}, {
+  "ACCOUNT_NUMBER" : "82",
+  "BALANCE" : "8664.76",
+  "BROKER_ID" : "4",
+  "CUSTOMER_ID" : "5",
+  "OWNER" : "Owner 2"
+}, {
+  "ACCOUNT_NUMBER" : "83",
+  "BALANCE" : "9743.11",
+  "BROKER_ID" : "11",
+  "CUSTOMER_ID" : "10",
+  "OWNER" : "Owner 3"
+}, {
+  "ACCOUNT_NUMBER" : "84",
+  "BALANCE" : "4407.24",
+  "BROKER_ID" : "2",
+  "CUSTOMER_ID" : "1",
+  "OWNER" : "Owner 4"
+}, {
+  "ACCOUNT_NUMBER" : "85",
+  "BALANCE" : "6417.89",
+  "BROKER_ID" : "1",
+  "CUSTOMER_ID" : "18",
+  "OWNER" : "Owner 5"
+}, {
+  "ACCOUNT_NUMBER" : "86",
+  "BALANCE" : "5256.04",
+  "BROKER_ID" : "3",
+  "CUSTOMER_ID" : "8",
+  "OWNER" : "Owner 6"
+}, {
+  "ACCOUNT_NUMBER" : "87",
+  "BALANCE" : "1179.39",
+  "BROKER_ID" : "6",
+  "CUSTOMER_ID" : "18",
+  "OWNER" : "Owner 7"
+}, {
+  "ACCOUNT_NUMBER" : "88",
+  "BALANCE" : "5071.87",
+  "BROKER_ID" : "13",
+  "CUSTOMER_ID" : "2",
+  "OWNER" : "Owner 8"
+}, {
+  "ACCOUNT_NUMBER" : "89",
+  "BALANCE" : "7192.06",
+  "BROKER_ID" : "17",
+  "CUSTOMER_ID" : "19",
+  "OWNER" : "Owner 9"
+}, {
+  "ACCOUNT_NUMBER" : "90",
+  "BALANCE" : "4120.35",
+  "BROKER_ID" : "4",
+  "CUSTOMER_ID" : "1",
+  "OWNER" : "Owner 10"
+} ]

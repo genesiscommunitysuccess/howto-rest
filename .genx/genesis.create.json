@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "version": "1.117.0",
+    "generated": "Mon, 09 Sep 2024 09:44:51 GMT"
+  },
+  "data": {
+    "projectName": "howto-rest",
+    "description": "This project is an example of how to integrate external REST APIs with the Genesis Platform.",
+    "components": [
+      "GenesisServerCore",
+      "User Authorization"
+    ],
+    "tables": [],
+    "consolidators": [],
+    "ui": {
+      "config": null,
+      "routes": [
+        {
+          "id": "b24754eb-bff4-4f36-a7cc-72787ac6877c",
+          "name": "HOME",
+          "layoutType": null,
+          "permissions": null,
+          "tiles": []
+        }
+      ],
+      "framework": "web components"
+    },
+    "views": [],
+    "PBCs": [],
+    "csv": [
+      {
+        "name": "RIGHT",
+        "fields": [
+          "CODE",
+          "DESCRIPTION"
+        ],
+        "data": []
+      },
+      {
+        "name": "PROFILE",
+        "fields": [
+          "NAME",
+          "DESCRIPTION",
+          "STATUS"
+        ],
+        "data": []
+      },
+      {
+        "name": "PROFILE_RIGHT",
+        "fields": [
+          "PROFILE_NAME",
+          "RIGHT_CODE"
+        ],
+        "data": []
+      }
+    ],
+    "userOverrides": null,
+    "deliveryConfig": {
+      "method": "download",
+      "fileSuffix": "2024-09-09_104450"
+    },
+    "telemetry": {
+      "deviceId": "c813502a-4d7b-4dfe-a467-3045e2ef7d73",
+      "sessionId": "474354a5-a981-43eb-94b7-76094c0aa31d"
+    }
+  }
+}
