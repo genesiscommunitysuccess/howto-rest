@@ -1,0 +1,21 @@
+<!--
+    Processes defined here will run the application.
+
+  * Full documentation on process definitions may be found here >> https://docs.genesis.global/docs/develop/server-capabilities/runtime-configuration/processes/
+
+-->
+
+<processes>
+  <process name="HOWTO_REST_MANAGER">
+    <groupId>HOWTO_REST</groupId>
+    <start>true</start>
+    <options>-Xmx512m -DRedirectStreamsToLog=true</options>
+    <module>genesis-pal-eventhandler,genesis-pal-requestserver,genesis-pal-dataserver,genesis-pal-datapipeline</module>
+    <package>global.genesis.dataserver.pal,global.genesis.eventhandler.pal,global.genesis.requestreply.pal,global.genesis.pipeline</package>
+    <script>howto-rest-eventhandler.kts,howto-rest-reqrep.kts,howto-rest-dataserver.kts,howto-rest-pipelines.kts</script>
+    <description>Management of eventhandler, request server and data server processes</description>
+    <classpath>howto-rest-app*</classpath>
+    <language>pal</language>
+  </process>
+
+</processes>

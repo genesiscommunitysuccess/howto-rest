@@ -1,0 +1,105 @@
+### Insert all accounts (100 accounts from CSV)
+# curl -X POST http://localhost:8080/insert-all-accounts
+POST http://localhost:8080/insert-all-accounts
+
+### Get all the accounts
+# curl -X GET "http://localhost:8080/accounts?pageIndex=0&limit=100"
+GET http://localhost:8080/accounts?pageIndex=0&limit=100
+
+### Add a single account
+# curl -X POST http://localhost:8080/accounts
+#-H "Content-Type: application/json"
+#-d '{
+#  "accountNumber": "0006",
+#  "balance": "0.01",
+#  "brokerId": "006",
+#  "customerId": "006",
+#  "owner": "Homer Simpson"
+#}'
+POST http://localhost:8080/accounts
+Content-Type: application/json
+
+{
+  "accountNumber": "0006",
+  "balance": "0.01",
+  "brokerId": "006",
+  "customerId": "006",
+  "owner": "Homer Simpson"
+}
+
+### Login (retrieve session auth token)
+# curl -X POST http://localhost:9064/EVENT_LOGIN_AUTH
+#-H "Content-Type: application/json"
+#-d '{
+#  "SOURCE_REF": "1234567",
+#  "MESSAGE_TYPE": "EVENT_LOGIN_AUTH",
+#  "DETAILS": {
+#    "USER_NAME": "admin",
+#    "PASSWORD": "genesis"
+#  }
+#}'
+POST http://localhost:9064/EVENT_LOGIN_AUTH
+Content-Type: application/json
+
+{
+  "SOURCE_REF": "1234567",
+  "MESSAGE_TYPE": "EVENT_LOGIN_AUTH",
+  "DETAILS": {
+    "USER_NAME": "admin",
+    "PASSWORD": "genesis"
+  }
+}
+
+### Paginated REST request (update the session auth token header with the one in the login response)
+# curl -X GET "http://localhost:9064/req-accounts-api?DETAILS.MAX_ROWS=100&DETAILS.VIEW_NUMBER=0"
+#-H "Content-Type: application/json"
+#-H "SESSION_AUTH_TOKEN: euYfjVqMEP1EE7lQ2dfpVj2g66EKqAlq"
+#-H "SOURCE_REF: 3453453"
+GET http://localhost:9064/req-accounts-api?DETAILS.MAX_ROWS=10&DETAILS.VIEW_NUMBER=0
+SESSION_AUTH_TOKEN: QVjVypWoaIYij4G9pcFZHVQscOdMEINx
+SOURCE_REF: 3453453
+Content-Type: application/json
+
+### Paginated REST with critiera filter
+# curl -X GET "http://localhost:9064/req-accounts-api?DETAILS.MAX_ROWS=100&DETAILS.VIEW_NUMBER=0&DETAILS.CRITERIA_MATCH=BROKER_ID < 10"
+#-H "Content-Type: application/json"
+#-H "SESSION_AUTH_TOKEN: euYfjVqMEP1EE7lQ2dfpVj2g66EKqAlq"
+#-H "SOURCE_REF: 3453453"
+GET http://localhost:9064/req-accounts-api?DETAILS.MAX_ROWS=10&DETAILS.VIEW_NUMBER=0&DETAILS.CRITERIA_MATCH=BROKER_ID < 10
+SESSION_AUTH_TOKEN: V5e3kilPFnu6b1Dbrx0nrREjUEbvEDnx
+SOURCE_REF: 3453453
+Content-Type: application/json
+
+### Paginated WS request
+# Use Postman or a terminal client like websocat
+WEBSOCKET ws://localhost:9064/
+Content-Type: application/json
+
+{
+  "SOURCE_REF": "9248-421b-bd00-4cc6ad0c7876",
+  "SESSION_AUTH_TOKEN": "V5e3kilPFnu6b1Dbrx0nrREjUEbvEDnx",
+  "MESSAGE_TYPE": "REQ_ACCOUNTS_API",
+  "REQUEST": {},
+  "DETAILS": {
+    "VIEW_NUMBER": 0,
+    "MAX_ROWS": 25,
+    "CRITERIA_MATCH": "BROKER_ID < 10"
+  }
+}
+
+### Insert a Trade
+POST localhost:9064/event-trade-insert
+SESSION_AUTH_TOKEN: VKrlfZ8hEqSnWgNrTSy1RpPfybgxK3nF
+SOURCE_REF: 3453453
+Content-Type: application/json
+
+{
+  "DETAILS": {
+    "QUANTITY": 100,
+    "PRICE": 250.00,
+    "SIDE": "SELL",
+    "INSTRUMENT": "TSLA",
+    "ACCOUNT_NUMBER": 56
+  }
+}
+
