@@ -1,0 +1,259 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Example Accounts API",
+    "termsOfService": "",
+    "license": {
+      "name": "NA",
+      "url": ""
+    }
+  },
+  "host": "",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "account-controller",
+      "description": "Account Controller"
+    }
+  ],
+  "paths": {
+    "/accounts": {
+      "get": {
+        "tags": [
+          "account-controller"
+        ],
+        "summary": "Get all account entries",
+        "description": "Retrieves a paginated list of all accounts and the information associate with each account.",
+        "operationId": "findAllUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "query",
+            "description": "Unique identifier for the accounts.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "brokerId",
+            "in": "query",
+            "description": "Unique identifier of the broker for the accounts.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "description": "Pagination Index - Default is 0",
+            "default": 0,
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit the number of entries to retrieve. The default is 5.",
+            "required": false,
+            "type": "integer",
+            "default": 5,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccountsPage"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ErrorJson"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/ErrorJson"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorJson"
+            }
+          }
+        }
+      }
+    },
+    "/accounts/{accountNumber}": {
+      "get": {
+        "tags": [
+          "account-controller"
+        ],
+        "summary": "Get a single account entry",
+        "description": "Retrieves information on a single account entry.",
+        "operationId": "findByAccountNumberUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "Unique accountNumber identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccountDTO"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ErrorJson"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/ErrorJson"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorJson"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ErrorJson": {
+      "type": "object",
+      "required": [
+        "error",
+        "message",
+        "status",
+        "timeStamp"
+      ],
+      "properties": {
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Http status code"
+        },
+        "error": {
+          "type": "string",
+          "description": "Http error message"
+        },
+        "message": {
+          "type": "string",
+          "description": "More detailed error message"
+        },
+        "timeStamp": {
+          "type": "string",
+          "description": "Timestamp of the error"
+        }
+      }
+    },
+    "AccountsPage": {
+      "type": "object",
+      "required": [
+        "accounts",
+        "limit",
+        "pageIndex",
+        "totalElements",
+        "totalPages"
+      ],
+      "properties": {
+        "accounts": {
+          "type": "array",
+          "description": "Accounts",
+          "items": {
+            "$ref": "#/definitions/AccountDTO"
+          }
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Limit for the number of accounts returned"
+        },
+        "pageIndex": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Pagination Index "
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Total Number of accounts in the database"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Total number of pages based on the limit"
+        }
+      }
+    },
+    "AccountDTO": {
+      "type": "object",
+      "required": [
+        "accountNumber",
+        "balance",
+        "brokerId",
+        "customerId",
+        "owner"
+      ],
+      "properties": {
+        "accountNumber": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Account Number"
+        },
+        "balance": {
+          "type": "number",
+          "format": "double",
+          "description": "Account Balance"
+        },
+        "brokerId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Account Broker Id"
+        },
+        "customerId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Account Customer Id"
+        },
+        "owner": {
+          "type": "string",
+          "description": "Account Owner"
+        }
+      }
+    }
+  }
+}
