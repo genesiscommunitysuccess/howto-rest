@@ -1,0 +1,40 @@
+import { getUser } from '@genesislcap/foundation-user';
+import { getViewUpdateRightComponent } from '../../../utils';
+import ErrorMessage from '../../../components/ErrorMessage/ErrorMessage';
+{{#if tile.config.createFormUiSchema}}
+import { createFormSchema as createFormSchemaTile } from './{{kebabCase tile.title}}.create.form.schema';
+{{/if}}
+{{#if tile.config.uischema}}
+import { createFormSchema as createFormSchemaTile } from './{{kebabCase tile.title}}.create.form.schema';
+{{/if}}
+{{#if tile.config.updateFormUiSchema}}
+import { updateFormSchema as updateFormSchemaTile } from './{{kebabCase tile.title}}.update.form.schema';
+{{/if}}
+{{#if tile.config.columns}}
+import { columnDefs as columnDefsTile } from './{{kebabCase tile.title}}.column.defs';
+{{/if}}
+{{#if tile.config.gridOptions}}
+import { gridOptions as gridOptionsTile } from './{{kebabCase tile.title}}.gridOptions';
+{{/if}}
+import './{{kebabCase tile.title}}.component.css';
+
+export const {{pascalCase tile.componentName}} = () => {
+  const hasUserPermission = (permissionCode) => getViewUpdateRightComponent(getUser(), permissionCode);{{#if tile.config.createFormUiSchema}}
+  const createFormSchema = createFormSchemaTile;{{/if}}{{#if tile.config.uischema}}
+  const uischema = createFormSchemaTile;{{/if}}{{#if tile.config.updateFormUiSchema}}
+  const updateFormSchema = updateFormSchemaTile;{{/if}}{{#if tile.config.columns}}
+  const columnDefs = columnDefsTile;{{/if}}{{#if tile.config.gridOptions}}
+  const gridOptions = gridOptionsTile;{{/if}}{{#if tile.config.reqrep}}
+  const reqrep = { pollingInterval: 5000 };{{/if}}{{#if tile.config.type}}
+  const chartConfig = { {{#ifEquals tile.config.type 'pie'}}
+      "radius": 0.75,
+      "angleField": "value",
+      "colorField": "groupBy",{{else}}
+      "xField": "groupBy",
+      "yField": "value",{{/ifEquals}}
+  };{{/if}}
+
+  return (
+    {{> (lookup tile 'type') tile}}
+  );
+};
