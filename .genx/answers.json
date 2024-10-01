@@ -1,0 +1,151 @@
+{
+  "setApiHost": true,
+  "apiHost": "ws://localhost:9064",
+  "enableSSO": false,
+  "description": "This project is an example of how to integrate external REST APIs with the Genesis Platform.",
+  "groupId": "global.genesis",
+  "applicationVersion": "1.0.0-SNAPSHOT",
+  "enableDeployPlugin": false,
+  "csv": [
+    {
+      "name": "RIGHT",
+      "fields": [
+        "CODE",
+        "DESCRIPTION"
+      ],
+      "data": []
+    },
+    {
+      "name": "PROFILE",
+      "fields": [
+        "NAME",
+        "DESCRIPTION",
+        "STATUS"
+      ],
+      "data": []
+    },
+    {
+      "name": "PROFILE_RIGHT",
+      "fields": [
+        "PROFILE_NAME",
+        "RIGHT_CODE"
+      ],
+      "data": []
+    }
+  ],
+  "framework": "webcomponents",
+  "ui": {},
+  "routes": [
+    {
+      "id": "b24754eb-bff4-4f36-a7cc-72787ac6877c",
+      "name": "HOME",
+      "layoutType": "horizontal-layout",
+      "permissions": null,
+      "tiles": [],
+      "layoutKey": "HOME_1725875091082",
+      "FDC3EventHandlersEnabled": false
+    }
+  ],
+  "appName": "howto-rest",
+  "pkgName": "howtorest",
+  "directory": "howto-rest",
+  "appSeed": {
+    "type": "local",
+    "name": "blank-app-seed",
+    "description": "Genesis Blank App Seed Configuration",
+    "version": "3.30.0",
+    "date": "2024-09-09T09:44:51.073Z"
+  },
+  "rootElement": "howtorest-root",
+  "localGenId": "HOWTO_REST",
+  "applicationVersionWeb": "1.0.0",
+  "versions": {
+    "UI": "14.206.2",
+    "GSF": "8.3.0",
+    "Auth": "8.3.0"
+  },
+  "FDC3": {
+    "includeDependencies": false,
+    "channels": []
+  },
+  "additions": [
+    {
+      "setApiHost": true,
+      "apiHost": "ws://localhost:9064",
+      "enableSSO": false,
+      "description": "This project is an example of how to integrate external REST APIs with the Genesis Platform.",
+      "groupId": "global.genesis",
+      "applicationVersion": "1.0.0-SNAPSHOT",
+      "enableDeployPlugin": false,
+      "csv": [
+        {
+          "name": "RIGHT",
+          "fields": [
+            "CODE",
+            "DESCRIPTION"
+          ],
+          "data": []
+        },
+        {
+          "name": "PROFILE",
+          "fields": [
+            "NAME",
+            "DESCRIPTION",
+            "STATUS"
+          ],
+          "data": []
+        },
+        {
+          "name": "PROFILE_RIGHT",
+          "fields": [
+            "PROFILE_NAME",
+            "RIGHT_CODE"
+          ],
+          "data": []
+        }
+      ],
+      "framework": "webcomponents",
+      "ui": {},
+      "routes": [
+        {
+          "id": "b24754eb-bff4-4f36-a7cc-72787ac6877c",
+          "name": "HOME",
+          "layoutType": "horizontal-layout",
+          "permissions": null,
+          "tiles": [],
+          "layoutKey": "HOME_1725875091082",
+          "FDC3EventHandlersEnabled": false
+        }
+      ],
+      "appName": "howto-rest",
+      "pkgName": "howto-rest",
+      "directory": "/tmp/tmp-19-S1T8YuDkrJGf/howto-rest",
+      "appSeed": {
+        "type": "local",
+        "name": "pbc-auth-seed",
+        "date": "2024-09-09T09:44:51.572Z"
+      },
+      "rootElement": "howtorest-root",
+      "localGenId": "HOWTO_REST",
+      "applicationVersionWeb": "1.0.0",
+      "versions": {
+        "prerequisites": {
+          "foundationUI": "14.*",
+          "gsf": "8.*"
+        },
+        "dependencies": {
+          "authClientVersion": "1.0.9",
+          "authServerVersion": "8.3.0"
+        }
+      },
+      "FDC3": {
+        "includeDependencies": false,
+        "channels": []
+      },
+      "date": "Mon Sep 09 2024 09:44:51 GMT+0000 (Coordinated Universal Time)",
+      "utils": {
+        "changeCase": {}
+      }
+    }
+  ]
+}
