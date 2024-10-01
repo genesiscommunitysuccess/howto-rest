@@ -1,0 +1,4 @@
+paginated_requests:
+  - operation_id: findAllUsingGET
+    index_param: pageIndex
+    limit_param: limit
